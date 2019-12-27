@@ -17,7 +17,7 @@ public class Calculator {
 			if(num2 != 0) {
 			    result = num1;
 			    for(int i = 1; i < num2; i++) {
-				    result = result * num1;
+				    result *= num1;
 			    }			
 			}			
 			System.out.println(result);
