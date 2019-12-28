@@ -1,27 +1,24 @@
 public class Calculator {
 	public static void main(String[] args) {
 		int num1 = 2;
-		int num2 = 3;
-		char symbol = '^';
+		int num2 = 2;
+		char mathOperator = '^';
 
-		if(symbol == '+') {
+		if(mathOperator == '+') {
 			System.out.println(num1 + num2);
-		} else if(symbol == '-') {
+		} else if(mathOperator == '-') {
 			System.out.println(num1 - num2);
-		} else if(symbol == '*') {
+		} else if(mathOperator == '*') {
 			System.out.println(num1 * num2);
-		} else if(symbol == '/') {
+		} else if(mathOperator == '/') {
 			System.out.println(num1 / num2);
-		} else if(symbol == '^') {
+		} else if(mathOperator == '^') {
 			int result = 1;
-			if(num2 != 0) {
-			    result = num1;
-			    for(int i = 1; i < num2; i++) {
-				    result *= num1;
-			    }			
-			}			
+		    for(int i = 1; i <= num2; i++) {
+			    result *= num1;
+		    }					
 			System.out.println(result);
-		} else if(symbol == '%') {
+		} else if(mathOperator == '%') {
 			System.out.println(num1 % num2);
 		}
 	}
