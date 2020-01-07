@@ -8,7 +8,6 @@ public class CalculatorTest {
         String answer;
 
         while(true) {
-
             System.out.print("Введите первое число: ");
             calc.setNum1(scan.nextInt());
 
@@ -18,7 +17,7 @@ public class CalculatorTest {
             System.out.print("Введите второе число: ");
             calc.setNum2(scan.nextInt());
 
-            calc.getCalculatedNumber();
+            calc.calculate();
 
             System.out.print("Хотите продолжить? [да/нет]: ");
             answer = scan.next();
@@ -28,7 +27,13 @@ public class CalculatorTest {
             } else if(answer.equals("нет")) {
                 break;
             } else {
-                continue;
+                while(!"да".equals(answer) && !"нет".equals(answer)) {
+                    System.out.print("Хотите продолжить? [да/нет]: ");
+                    answer = scan.next();
+                }
+                if(answer.equals("нет")) {
+                    break;
+                }
             }
         }
     }

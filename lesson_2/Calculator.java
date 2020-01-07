@@ -16,7 +16,7 @@ public class Calculator {
         this.mathOperator = mathOperator;
     }
     
-    public void getCalculatedNumber() {
+    public void calculate() {
         switch(mathOperator) {
             case '+':
                 System.out.println(num1 + num2);
