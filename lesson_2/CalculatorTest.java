@@ -19,12 +19,10 @@ public class CalculatorTest {
 
             calc.calculate();
 
-            answer = "";
-
-            while(!"да".equals(answer) && !"нет".equals(answer)) {
+            do {
                 System.out.print("Хотите продолжить? [да/нет]: ");
                 answer = scan.next();
-            }
+            } while(!answer.equals("да") && !answer.equals("нет"));
         }
     }
 }
