@@ -5,9 +5,9 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
-        String answer;
+        String answer = "";
 
-        while(true) {
+        while(!answer.equals("нет")) {
             System.out.print("Введите первое число: ");
             calc.setNum1(scan.nextInt());
 
@@ -19,21 +19,11 @@ public class CalculatorTest {
 
             calc.calculate();
 
-            System.out.print("Хотите продолжить? [да/нет]: ");
-            answer = scan.next();
+            answer = "";
 
-            if(answer.equals("да")) {
-                continue;
-            } else if(answer.equals("нет")) {
-                break;
-            } else {
-                while(!"да".equals(answer) && !"нет".equals(answer)) {
-                    System.out.print("Хотите продолжить? [да/нет]: ");
-                    answer = scan.next();
-                }
-                if(answer.equals("нет")) {
-                    break;
-                }
+            while(!"да".equals(answer) && !"нет".equals(answer)) {
+                System.out.print("Хотите продолжить? [да/нет]: ");
+                answer = scan.next();
             }
         }
     }
