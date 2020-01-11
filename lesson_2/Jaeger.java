@@ -5,6 +5,13 @@ public class Jaeger {
     private String origin;
     private int speed;
 
+    public Jaeger(String modelName, String mark, String origin, int speed) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.origin = origin;
+        this.speed = speed;
+    }
+
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
