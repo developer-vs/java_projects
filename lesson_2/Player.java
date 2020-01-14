@@ -1,10 +1,8 @@
-import java.util.Scanner;
-
 public class Player {
 
     private String name;
     private int number;
-    private Scanner scan = new Scanner(System.in);
+    private boolean ifWinner;
 
     Player(String name) {
         this.name = name;
@@ -18,12 +16,19 @@ public class Player {
         return name;
     }
 
-    public void setNumber() {
-        System.out.print(name + ", введите ваше число: ");
-        number = scan.nextInt();
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public int getNumber() {
         return number;
+    }
+
+    public void setIfWinner(boolean ifWinner) {
+        this.ifWinner = ifWinner;
+    }
+
+    public boolean getIfWinner() {
+        return ifWinner;
     }
 }
