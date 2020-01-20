@@ -15,23 +15,30 @@ public class GuessNumber {
 
     public void startGame() {
         guessNumber = (int) (Math.random() * 101);
-        
+
         System.out.println("Компьютер загадал число: " + guessNumber);
 
         while(true) {
-            if(checkWinner(playerOne, scanner)) {
+            if(makeMove(playerOne)) {
                 break;
             }
-            if(checkWinner(playerTwo, scanner)) {
+            if(makeMove(playerTwo)) {
                 break;
             }
         }
     }
 
-    private boolean checkWinner(Player player, Scanner scan) {
-        System.out.print(player.getName() + ", введите ваше число: ");
-        player.setNumber(scan.nextInt());
+    private boolean makeMove(Player player) {
+        inputNumber(player);
+        return compareNumbers(player);
+    }
 
+    private void inputNumber(Player player) {
+        System.out.print(player.getName() + ", введите ваше число: ");
+        player.setNumber(scanner.nextInt());
+    }
+
+    private boolean compareNumbers(Player player) {
         if(player.getNumber() > guessNumber) {
             System.out.println(player.getName() + ", введенное вами число больше того, что загадал компьютер");
         } else if(player.getNumber() < guessNumber) {
