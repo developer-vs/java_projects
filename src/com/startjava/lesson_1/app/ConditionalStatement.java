@@ -1,6 +1,9 @@
+package com.startjava.lesson_1.app;
+
 public class ConditionalStatement {
-    public static void main(String[] args) {    
-        int age = 18;         
+    
+    public static void main(String[] args) {
+        int age = 18;
         if(age > 20) {
             System.out.println("Your age is over 20.");
         }
@@ -28,6 +31,6 @@ public class ConditionalStatement {
             System.out.println("Your first letter of the name is I.");
         } else {
             System.out.println("Your first letter of the name is undefined.");
-        } 
+        }
     }
 }
