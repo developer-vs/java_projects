@@ -5,7 +5,7 @@ public class Calculator {
     private int num1;
     private int num2;
     private char mathOperator;
-    private int value;
+    private int result;
 
     public Calculator(String expression) {
         String[] arr = expression.split(" ");
@@ -17,26 +17,26 @@ public class Calculator {
     public int calculate() {
         switch(mathOperator) {
             case '+':
-                value = Math.addExact(num1, num2);
+                result = Math.addExact(num1, num2);
                 break;
             case '-':
-                value = Math.subtractExact(num1, num2);
+                result = Math.subtractExact(num1, num2);
                 break;
             case '*':
-                value = Math.multiplyExact(num1, num2);
+                result = Math.multiplyExact(num1, num2);
                 break;
             case '/':
-                value = Math.floorDiv(num1, num2);
+                result = Math.floorDiv(num1, num2);
                 break;
             case '^':
-                value = (int)Math.pow(num1, num2);
+                result = (int)Math.pow(num1, num2);
                 break;
             case'%':
-                value = Math.floorMod(num1, num2);
+                result = Math.floorMod(num1, num2);
                 break;
             default:
                 System.out.println("Вы использовали неправильный математический оператор");
         }
-        return value;
+        return result;
     }
 }
