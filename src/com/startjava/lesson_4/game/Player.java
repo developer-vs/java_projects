@@ -1,34 +1,31 @@
 package com.startjava.lesson_4.game;
 
+import java.util.Arrays;
+
 public class Player {
     
-    /*
-    Для обнуления массивов игроков, при повторном запуске игры, используйте метод Arrays.fill().
-    При этом обнуляйте только те ячейки, где хранятся, названные игроками числа
-     */
-
     private String name;
     private int number;
     private int[] enteredNumbers = new int[10];
-
+    
     Player(String name) {
         this.name = name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    
     public String getName() {
         return name;
     }
-
-    public void setNumber(int number) {
-        this.number = number;
+    
+    public void setName(String name) {
+        this.name = name;
     }
-
+    
     public int getNumber() {
         return number;
+    }
+    
+    public void setNumber(int number) {
+        this.number = number;
     }
     
     public int[] getEnteredNumbers() {
@@ -37,5 +34,9 @@ public class Player {
     
     public void setEnteredNumbers(int counter, int number) {
         enteredNumbers[counter] = number;
+    }
+    
+    public void clearAnArray() {
+        Arrays.fill(enteredNumbers, 0);
     }
 }
