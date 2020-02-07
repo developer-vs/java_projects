@@ -20,8 +20,6 @@ public class GuessNumber {
         guessNumber = (int) (Math.random() * 101);
         System.out.println("Компьютер загадал число: " + guessNumber);
 
-        clearAnArray(playerOne);
-        clearAnArray(playerTwo);
         counter = 0;
         
         while (counter < 10) {
@@ -43,15 +41,14 @@ public class GuessNumber {
             System.out.println("У " + playerTwo.getName() + " закончились попытки");
             System.out.println(Arrays.toString(Arrays.copyOf(playerTwo.getEnteredNumbers(), counter)));
         }
+
+        playerOne.clearEnteredNumbers(counter);
+        playerTwo.clearEnteredNumbers(counter);
     }
-    
-    private void clearAnArray(Player player) {
-        player.clearAnArray();
-    }
-    
+
     private boolean makeMove(Player player) {
         inputNumber(player);
-        addNumberToArray(player);
+        player.addEnteredNumber(counter, player.getNumber());
         return compareNumbers(player);
     }
     
@@ -59,11 +56,7 @@ public class GuessNumber {
         System.out.print(player.getName() + ", введите ваше число: ");
         player.setNumber(scanner.nextInt());
     }
-    
-    private void addNumberToArray(Player player) {
-        player.setEnteredNumbers(counter, player.getNumber());
-    }
-    
+
     private boolean compareNumbers(Player player) {
         if (player.getNumber() > guessNumber) {
             System.out.println(player.getName() + ", введенное вами число больше того, что загадал компьютер");

@@ -15,11 +15,7 @@ public class Player {
     public String getName() {
         return name;
     }
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-    
+
     public int getNumber() {
         return number;
     }
@@ -32,11 +28,11 @@ public class Player {
         return enteredNumbers;
     }
     
-    public void setEnteredNumbers(int counter, int number) {
+    public void addEnteredNumber(int counter, int number) {
         enteredNumbers[counter] = number;
     }
     
-    public void clearAnArray() {
-        Arrays.fill(enteredNumbers, 0);
+    public void clearEnteredNumbers(int index) {
+        Arrays.fill(enteredNumbers, 0, index,0);
     }
 }
